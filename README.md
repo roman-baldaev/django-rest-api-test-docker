@@ -33,8 +33,8 @@ Using Django REST-API framework with Postgres in docker container and frontend (
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
   ```
-5. Run docker: `docker-compose up`. After this lets go create user in our DB:
-    * run bash: **`$:/# docker exec -i -t postgres-docker_postgres9_1 /bin/bash`**
+5. Run docker: **`docker-compose up`**. After this lets go create user in our DB:
+    * run bash: **`$:/# docker exec -i -t docker_container_id_or_name /bin/bash`**
     * open your db console: **`$:/# psql -U admin django_rest_api;"`**
     * check all table: **`django_rest_api=# \dt`**, (it will return `No relations found.`)
     * go back to django project and migrate default data: **`(venv) path_to_manage.py\src>python manage.py migrate`**

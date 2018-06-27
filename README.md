@@ -4,8 +4,8 @@ Using Django REST-API framework with Postgres in docker container and frontend (
 ## 1) Create new django project and connect to Postgres that works in Docker (it is a good choice for development)
 
 1. Create new Django project (i recommend creating a folder with a virtual environment not in the project folder)
-1. Install psycopg2 (use `pip install psycopg2`)
-1. Change DB settings in `settings.py`:
+1. Install psycopg2 (use **`pip install psycopg2`**)
+1. Change DB settings in **`settings.py`**:
    ```
    DATABASES = {
       'default': {
@@ -34,11 +34,11 @@ Using Django REST-API framework with Postgres in docker container and frontend (
       POSTGRES_PASSWORD: password
   ```
 5. Run docker: `docker-compose up`. After this lets go create user in our DB:
-    * run bash: `$:/# docker exec -i -t postgres-docker_postgres9_1 /bin/bash`
-    * open your db console: `$:/# psql -U admin django_rest_api;"`
-    * check all table: `django_rest_api=# \dt`, (it will return `No relations found.`)
-    * go back to django project and migrate default data: `(venv) path_to_manage.py\src>python manage.py migrate`
-    * check all table again: `django_rest_api=# \dt` and it will return:
+    * run bash: **`$:/# docker exec -i -t postgres-docker_postgres9_1 /bin/bash`**
+    * open your db console: **`$:/# psql -U admin django_rest_api;"`**
+    * check all table: **`django_rest_api=# \dt`**, (it will return `No relations found.`)
+    * go back to django project and migrate default data: **`(venv) path_to_manage.py\src>python manage.py migrate`**
+    * check all table again: **`django_rest_api=# \dt`** and it will return:
       ```
                      List of relations
        Schema |            Name            | Type  | Owner

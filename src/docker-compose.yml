@@ -1,0 +1,23 @@
+version: '3'
+services:
+    db:
+      image: postgres:9.6
+      ports:
+        - 5432:5432
+      environment:
+        POSTGRES_DB: django_rest_api
+        POSTGRES_USER: django
+        POSTGRES_PASSWORD: admin
+        PGDATA: /tmp
+      volumes:
+        - ./postgresql/data:/var/lib/postgresql/data
+
+    backend:
+      build: .
+      container_name: rest_api
+      command: python3 manage.py runserver 0.0.0.0:7777
+
+      volumes:
+        - .:/src
+      ports:
+        - "7777:7777"

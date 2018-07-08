@@ -21,3 +21,5 @@ services:
         - .:/src
       ports:
         - "7777:7777"
+      depends_on:
+        - "db"
